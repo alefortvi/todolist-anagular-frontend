@@ -1,0 +1,16 @@
+<mat-grid-list cols="4" rowHeight="4:1">
+  <mat-grid-tile>{{job._id}}</mat-grid-tile>
+  <mat-grid-tile>{{job.description}}</mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field>
+    <mat-select [(value)]="currentState">
+      <mat-option *ngFor="let state of states" [value]="state.state">
+        {{state.state}}
+      </mat-option>
+    </mat-select>
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile><img src="{{localRootPath}}{{job.imagePath}}"></mat-grid-tile>
+</mat-grid-list>
+
+
