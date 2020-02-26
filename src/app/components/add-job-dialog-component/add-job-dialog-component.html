@@ -14,8 +14,8 @@
     <br/>
    <input type="file" accept="image/x-png,image/gif,image/jpeg" class="file-upload" (change)="onPhotoSelected($event)" #photoInput>
   </div>
-  <button class="button-add-job" color="primary" mat-raised-button (click)="evUploadPhoto()">
-    Agregar tarea
+  <button class="button-add-job" color="primary" mat-raised-button (click)="evUploadPhoto()" [disabled]="localLoading">
+    {{localButtonLabel}}
   </button>
 </form>
 

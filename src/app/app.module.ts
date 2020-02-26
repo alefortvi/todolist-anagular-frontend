@@ -15,7 +15,8 @@ import {
   MatSelectModule,
   MatDialogModule,
   MatDialogRef,
-  MatInputModule, MatToolbarModule, MatMenuModule
+  MatSnackBarRef, MatSnackBarModule,
+  MatInputModule, MatToolbarModule, MatMenuModule, MAT_SNACK_BAR_DEFAULT_OPTIONS
 } from '@angular/material';
 import {Resolver} from './services/resolver';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -45,7 +46,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     MatInputModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   entryComponents: [
     AddJobDialogComponent
@@ -53,7 +55,9 @@ import {ReactiveFormsModule} from '@angular/forms';
   providers: [
     Resolver,
     {provide: MatDialogRef, useValue: {}},
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
+    {provide: MatSnackBarRef, useValue: {}},
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}},
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3500}}
   ],
   bootstrap: [AppComponent]
 })
