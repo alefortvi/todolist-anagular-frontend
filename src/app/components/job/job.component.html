@@ -1,16 +1,24 @@
-<mat-grid-list cols="4" rowHeight="4:1">
-  <mat-grid-tile>{{job._id}}</mat-grid-tile>
-  <mat-grid-tile>{{job.description}}</mat-grid-tile>
-  <mat-grid-tile>
-    <mat-form-field>
-    <mat-select [(value)]="currentState">
-      <mat-option *ngFor="let state of states" [value]="state.state">
-        {{state.state}}
-      </mat-option>
-    </mat-select>
+<mat-card class="example-card"
+          [ngStyle]="{'background-color': color}">
+  <div class="center-card">
+    <mat-card-header>
+      <mat-card-title>Id</mat-card-title>
+      <mat-card-subtitle>{{job._id}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="mat-card-image" src="{{localRootPath}}{{job.imagePath}}" alt="Photo">
+    <mat-card-content class="card-content">
+      <p>
+        {{job.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-form-field>
+        <mat-select [(value)]="currentState" (selectionChange)="pbSetStatus($event)">
+          <mat-option *ngFor="let state of states;" [value]="state.state" >
+            {{state.state}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-  </mat-grid-tile>
-  <mat-grid-tile><img src="{{localRootPath}}{{job.imagePath}}"></mat-grid-tile>
-</mat-grid-list>
-
-
+    </mat-card-actions>
+  </div>
+</mat-card>

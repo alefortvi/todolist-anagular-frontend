@@ -1,0 +1,12 @@
+<div>
+  <button mat-raised-button color="primary"
+          class="button-add-job" (click)="openDialog()">
+    Agregar tarea
+  </button>
+</div>
+<div class="grid-container">
+  <div *ngFor="let job of jobs">
+    <app-job [job]=job [states]="states"></app-job>
+    <br/>
+  </div>
+</div>

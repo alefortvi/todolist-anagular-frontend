@@ -41,13 +41,13 @@ export class PhotoPreviewComponent implements OnInit {
       })
   }
 
-  updatePhoto(title: HTMLInputElement, description: HTMLInputElement): boolean {
-    this.photoService.updatePhoto(this.photo._id, title.value, description.value)
-      .subscribe(res => {
-        console.log(res);
-        this.router.navigate(['/photos']);
-      });
-    return false;
-  }
+  // updatePhoto(title: HTMLInputElement, description: HTMLInputElement): boolean {
+  //   this.photoService.getStates(this.photo._id, title.value)
+  //     .subscribe(res => {
+  //       console.log(res);
+  //       this.router.navigate(['/photos']);
+  //     });
+  //   return false;
+  // }
 
 }

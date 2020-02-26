@@ -38,7 +38,7 @@ export class ListService {
     return this.http.delete(`${this.URI}/${id}`);
   }
 
-  updatePhoto(id: string, title: string, description: string) {
-    return this.http.put(`${this.URI}/${id}`, {title, description});
+  updateState(id: string, status: number) {
+    return this.http.put(environment.editStatusPath + id, {state: status});
   }
 }

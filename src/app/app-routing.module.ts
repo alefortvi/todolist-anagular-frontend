@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { PhotosListComponent } from './components/photos-list/photos-list.component'
 import { PhotoFormComponent } from './components/photo-form/photo-form.component'
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component'
-import {Resolver} from "./services/resolver";
+import {Resolver} from './services/resolver';
+import {JobsListComponent} from './components/job-list/jobs-list.component';
 
 const routes: Routes = [
   {
     path: 'list',
-    component: PhotosListComponent,
+    component: JobsListComponent,
     resolve: {
       // The resolver is just for have some data before load the componet
       stateList: Resolver
     }
 
   },
-
-
-
-
   {
     path: 'photos/new',
     component: PhotoFormComponent
