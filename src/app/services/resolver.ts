@@ -8,6 +8,6 @@ export class Resolver implements Resolve<object[]> {
   constructor(private listService: ListService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<object[]> {
-    return this.listService.getJobs();
+    return this.listService.getStates();
   }
 }

@@ -1,0 +1,50 @@
+.example-card {
+  max-width: 250px;
+  text-align: center;
+  margin: 15px;
+  padding: 15px 0px 15px 0px;
+}
+
+.mat-card-image{
+  width: 200px;
+  height: 200px;
+}
+.example-header-image {
+  background-size: cover;
+}
+
+.center-card{
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+}
+
+.card-content{
+  font-family: Roboto;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.card-header{
+  width: 100%;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.maxWidth{
+  width: 250px;
+  padding: 0px 0px 0px 0px;
+  margin-left: 0px;
+}
+.header {
+  text-align: center;
+}
+
+.card-job-header{
+  padding: 0px 0px 0px 0px;
+  margin-left: 0px;
+}
+
+.mat-card-header-text{
+  margin-left: 0px;
+}

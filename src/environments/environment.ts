@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false,
-  getList: 'localhost:3000/api',
+  rootPath : 'http://localhost:4000/',
+  statesPath : 'http://localhost:4000/api/states',
+  getJobsListPath : 'http://localhost:4000/api/',
+  editStatusPath : 'http://localhost:4000/api/edit/',
+  createNewJobPath : 'http://localhost:4000/api/',
 
 };
 

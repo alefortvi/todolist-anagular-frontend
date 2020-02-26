@@ -1,0 +1,30 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". . . .";
+}
+
+.button-add-job{
+  margin: 10px;
+}
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
+}
+.menu-right{
+  position: absolute;
+  right: 0px;
+  width: 30px;
+  padding: 10px;
+}
+
+.menu-left{
+  position: absolute;
+  left: 0px;
+  width: 30px;
+  padding: 10px;
+}

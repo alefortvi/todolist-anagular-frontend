@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+<div style="text-align: center">
+      <span>Lista detareas</span>
+</div>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>Acciones</mat-icon>
+      </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openDialog()">Agregar tarea</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+  </mat-toolbar-row>
+
+
+
+</mat-toolbar>
+
+<div>
+</div>
+<div class="grid-container">
+  <div *ngFor="let job of jobs">
+    <app-job [job]=job [states]="states"></app-job>
+    <br/>
+  </div>
+</div>
