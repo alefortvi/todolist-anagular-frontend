@@ -40,7 +40,9 @@ export class AddJobDialogComponent implements OnInit {
       return;
     }
     const des = this.localJobFormGroup.get('description').value;
-    // this.listService.createNewJob()
+    this.listService.createNewJob(des, this.file).subscribe(v => {
+      console.log(v);
+    });
 
   }
 
