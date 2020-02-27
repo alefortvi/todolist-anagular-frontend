@@ -32,3 +32,5 @@ Producción:
 
 `ng build`
 
+Por defecto corre en el puerto 4200. Escucha el Back-end en el puerto 4000. Si se usa otro puerto, debe especificarse en el environment.ts
+
