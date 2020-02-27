@@ -10,7 +10,7 @@
   resize: none;
 }
 
-.button-add-job{
+.button-add-job {
   margin: 10px;
   float: right;
 }
@@ -20,9 +20,8 @@
 }
 
 .header h1 {
-  font-family: serif;
   font-size: 38px;
-  font-family: 'Times New Roman';
+  font-family: 'Times New Roman', sans-serif;
 }
 
 .content {
@@ -37,9 +36,7 @@
   cursor: pointer;
 }
 
-.job-description{
-  text-align: center;
-}
+
 
 .example-icon {
   padding: 0 14px;
@@ -49,23 +46,24 @@
   flex: 1 1 auto;
 }
 
-.file-upload{
+.file-upload {
   padding-top: 25px;
-  margin: 20px 0px 15px 0px;
-  font-family: Roboto;
+  margin: 20px 0 15px 0;
+  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-stretch: 100%;
   font-weight: 500;
   line-height: 10px;
 }
-.file-upload-button{
-  font-family: Roboto;
+
+.file-upload-button {
+  font-family: Roboto, sans-serif;
   padding-top: 10px;
   font-size: 14px;
 }
 
-.global-error{
-  font-family: Roboto;
+.global-error {
+  font-family: Roboto, sans-serif;
   font-size: 14px;
 }
 

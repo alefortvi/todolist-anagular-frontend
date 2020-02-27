@@ -1,35 +1,35 @@
 <mat-toolbar color="primary">
+
   <mat-toolbar-row>
-<div style="text-align: center">
+    <div style="text-align: center">
       <span>Lista de tareas</span>
-</div>
+    </div>
   </mat-toolbar-row>
+
   <mat-toolbar-row>
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>Acciones</mat-icon>
-      </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+      <mat-icon>Acciones</mat-icon>
+    </button>
 
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="openDialog()">Agregar tarea</button>
-          <button mat-menu-item [matMenuTriggerFor]="order">Ordernar por</button>
-        </mat-menu>
+    <mat-menu #menu="matMenu">
+      <button (click)="pbOpenDialog()" mat-menu-item>Agregar tarea</button>
+      <button [matMenuTriggerFor]="order" mat-menu-item>Ordernar por</button>
+    </mat-menu>
 
-        <mat-menu #order="matMenu">
-            <button mat-menu-item (click)="orderBy(0)">ID</button>
-            <button mat-menu-item (click)="orderBy(1)">Estado</button>
-            <button mat-menu-item (click)="orderBy(2)">Descripcion</button>
-        </mat-menu>
+    <mat-menu #order="matMenu">
+      <button (click)="pbOrderBy(0)" mat-menu-item>ID</button>
+      <button (click)="pbOrderBy(1)" mat-menu-item>Estado</button>
+      <button (click)="pbOrderBy(2)" mat-menu-item>Descripcion</button>
+    </mat-menu>
   </mat-toolbar-row>
-
-
 
 </mat-toolbar>
 
 <div>
 </div>
 <div class="grid-container">
-  <div *ngFor="let job of jobs">
-    <app-job [job]=job [states]="states"></app-job>
+  <div *ngFor="let job of localJobs">
+    <app-card-job [job]=job [states]="localStates" (emiterJobDelete)="pbDeleteCard($event)"></app-card-job>
     <br/>
   </div>
 </div>

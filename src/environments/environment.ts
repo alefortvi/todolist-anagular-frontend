@@ -2,14 +2,17 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const port = 4000;
+
 export const environment = {
   production: false,
-  rootPath : 'http://localhost:4000/',
-  statesPath : 'http://localhost:4000/api/states',
-  getJobsListPath : 'http://localhost:4000/api/',
-  editStatusPath : 'http://localhost:4000/api/edit/',
-  createNewJobPath : 'http://localhost:4000/api/',
-  orderBy : 'http://localhost:4000/api/order',
+  rootPath : 'http://localhost:' + port + '/',
+  statesPath : 'http://localhost:' + port + '/api/states',
+  getJobsListPath : 'http://localhost:' + port + '/api/',
+  editStatusPath : 'http://localhost:' + port + '/api/edit/',
+  createNewJobPath : 'http://localhost:' + port + '/api/',
+  orderBy : 'http://localhost:' + port + '/api/order',
+  deleteJob : 'http://localhost:' + port + '/api/delete/',
 
 };
 

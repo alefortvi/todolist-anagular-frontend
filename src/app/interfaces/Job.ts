@@ -1,6 +1,6 @@
 export interface Job {
     _id?: string;
     state: number;
-    description: String;
+    description: string;
     imagePath: string;
 }

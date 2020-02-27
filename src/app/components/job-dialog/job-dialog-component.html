@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" style="margin-bottom: 20px">
+  <mat-toolbar-row>
+    <span>Nueva tarea</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<form [formGroup]="localJobFormGroup" class="example-form">
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Tarea</mat-label>
+    <label>
+<textarea class="text-area-job" formControlName="description" matInput placeholder="Describa su tarea">
+  </textarea>
+    </label>
+    <mat-error *ngIf="localJobFormGroup.invalid">
+      La tarea debe tener de 10 a 50 caracteres
+    </mat-error>
+  </mat-form-field>
+  <div class="file-upload">
+    <mat-label>Seleccione una imagen para su tarea</mat-label>
+    <!--    <label><b></b></label>-->
+  </div>
+  <br/>
+  <div>
+
+    <input #photoInput (change)="onPhotoSelected($event)" accept="image/x-png,image/gif,image/jpeg" class="file-upload-button" type="file">
+  </div>
+  <button (click)="evUploadPhoto()" [disabled]="localLoading" class="button-add-job" color="primary" mat-raised-button>
+    {{localButtonLabel}}
+  </button>
+  <mat-error *ngIf="localErrorFlag" class="global-error">
+    {{localErrorMessage}}
+  </mat-error>
+</form>
+
+
+

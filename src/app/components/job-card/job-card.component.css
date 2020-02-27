@@ -1,0 +1,69 @@
+.example-card {
+  max-width: 260px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  padding: 15px 0 15px 0;
+  height: 500px;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #EEEEEE;
+}
+
+.mat-card-image {
+  width: 200px;
+  height: 200px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.center-card {
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+}
+
+.card-content {
+  font-family: Roboto, sans-serif;
+  margin-top: 10px;
+  font-size: 20px;
+  height: 70px;
+  vertical-align: middle;
+}
+
+.card-header {
+  width: 100%;
+  text-align: center;
+  margin-left: 0;
+}
+.job-description {
+  text-align: center;
+  height: 70px;
+  vertical-align: middle;
+}
+.maxWidth {
+  width: 250px;
+  padding: 0 0 0 0;
+  margin-left: 0;
+}
+
+.header {
+  text-align: center;
+}
+
+.card-job-header {
+  padding: 0 0 0 0;
+  margin-left: 0;
+}
+
+.mat-card-header-text {
+  margin-left: 0;
+}
+.delete-Card{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+

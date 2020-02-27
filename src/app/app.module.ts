@@ -4,31 +4,34 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {JobsListComponent} from './components/job-list/jobs-list.component';
-import {JobComponent} from './components/job/job.component';
+import {JobCardComponent} from './components/job-card/job-card.component';
 import {
   MAT_DIALOG_DEFAULT_OPTIONS,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatButtonModule,
   MatCardModule,
-  MatGridListModule,
-  MatIconModule,
-  MatOptionModule,
-  MatSelectModule,
   MatDialogModule,
   MatDialogRef,
-  MatSnackBarRef, MatSnackBarModule,
-  MatInputModule, MatToolbarModule, MatMenuModule, MAT_SNACK_BAR_DEFAULT_OPTIONS
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatSnackBarModule,
+  MatSnackBarRef,
+  MatToolbarModule
 } from '@angular/material';
 import {Resolver} from './services/resolver';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AddJobDialogComponent} from './components/add-job-dialog-component/add-job-dialog.component';
+import {JobDialogComponent} from './components/job-dialog/job-dialog.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobComponent,
-    AddJobDialogComponent,
+    JobCardComponent,
+    JobDialogComponent,
     JobsListComponent,
   ],
   imports: [
@@ -50,7 +53,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatSnackBarModule
   ],
   entryComponents: [
-    AddJobDialogComponent
+    JobDialogComponent
   ],
   providers: [
     Resolver,

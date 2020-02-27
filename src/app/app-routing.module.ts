@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {Resolver} from './services/resolver';
 import {JobsListComponent} from './components/job-list/jobs-list.component';
 
@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'list',
     component: JobsListComponent,
     resolve: {
-      // The resolver is just for have some data before load the componet
+      // The resolver is get the states
       stateList: Resolver
     }
 
@@ -24,4 +24,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

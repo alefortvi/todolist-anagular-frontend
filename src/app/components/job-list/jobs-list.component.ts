@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {JobDialogComponent} from '../job-dialog/job-dialog.component';
 import {ListService} from '../../services/list.service';
-import {Job} from '../../interfaces/Job';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {State} from '../../interfaces/State';
-import {AddJobDialogComponent} from '../add-job-dialog-component/add-job-dialog.component';
 import {MatDialog} from '@angular/material';
+import {Job} from '../../interfaces/Job';
 
 @Component({
   selector: 'app-photos-list',
@@ -13,40 +13,45 @@ import {MatDialog} from '@angular/material';
 })
 export class JobsListComponent implements OnInit {
 
-  jobs: Job[] = [];
-  states: State[] = [];
+  localJobs: Job[] = [];
+  localStates: State[] = [];
 
   constructor(
     private listService: ListService,
     private route: ActivatedRoute,
-    private router: Router,
     public dialog: MatDialog
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     const vm = this;
+    // Get the jobs list
     this.listService.getJobs()
       .subscribe(
         res => {
-          this.jobs = res;
+          this.localJobs = res;
         },
         err => console.log(err)
       );
+    // Get the serialized states
     const sub = this.route.data.subscribe(data => {
-      vm.states = data.stateList;
-    });
+        vm.localStates = data.stateList;
+      },
+      (error) => {
+      },
+      () => {
+        sub.unsubscribe();
+      });
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(AddJobDialogComponent, {
+  public pbOpenDialog(): void {
+    const dialogRef = this.dialog.open(JobDialogComponent, {
       disableClose: false,
       autoFocus: true,
       data: {}
     });
     const sub = dialogRef.componentInstance.emiterJobCreated.subscribe(() => {
       const subs = this.listService.getJobs().subscribe(res => {
-          this.jobs = res;
+          this.localJobs = res;
         },
         () => {
         },
@@ -58,7 +63,7 @@ export class JobsListComponent implements OnInit {
     });
   }
 
-  orderBy(by: number) {
+  public pbOrderBy(by: number) {
     let byparam;
     switch (by) {
       case 0 :
@@ -72,12 +77,26 @@ export class JobsListComponent implements OnInit {
         break;
     }
     const subs = this.listService.orderBy(byparam).subscribe(res => {
-        this.jobs = res;
+        this.localJobs = res;
       },
       () => {
       },
       () => subs.unsubscribe()
     );
+  }
+
+  public pbDeleteCard(id: string) {
+    const sub = this.listService.deleteJob(id)
+      .subscribe((res) => {
+          if (res) {
+            this.localJobs = res;
+          }
+        }, (error) => {
+        },
+        () => {
+          sub.unsubscribe();
+        }
+      );
   }
 
 }

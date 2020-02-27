@@ -1,4 +1,4 @@
 export interface State {
-  cod : number,
-  state: string,
+  cod: number;
+  state: string;
 }
