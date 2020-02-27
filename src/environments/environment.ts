@@ -9,6 +9,7 @@ export const environment = {
   getJobsListPath : 'http://localhost:4000/api/',
   editStatusPath : 'http://localhost:4000/api/edit/',
   createNewJobPath : 'http://localhost:4000/api/',
+  orderBy : 'http://localhost:4000/api/order',
 
 };
 
