@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 
 import {Job} from '../interfaces/Job';
@@ -17,7 +17,7 @@ export class ListService {
 
   createNewJob(description: string, photo: File) {
     const fd = new FormData();
-    fd.append('state', '1');
+    fd.append('state', '0');
     fd.append('description', description);
     fd.append('image', photo);
     return this.http.post(environment.createNewJobPath, fd);
@@ -31,8 +31,9 @@ export class ListService {
     return this.http.get<State[]>(environment.statesPath);
   }
 
-  getPhoto(id: string) {
-    return this.http.get<Job>(`${this.URI}/${id}`);
+  orderBy(by: string) {
+    const params = new HttpParams().set('by', by);
+    return this.http.get<Job[]>(environment.orderBy, {params});
   }
 
   deletePhoto(id: string) {
